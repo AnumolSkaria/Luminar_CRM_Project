@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+{% extends 'index/index1.html' %}
+{% block content %}
+<body>
+
+{#<h1 style="color: red;margin-left: 600px">Add Batch</h1>#}
+<br>
+<div class="container">
+    <div class="row" style="margin-left: 450px">
+
+<form method="post">
+{% csrf_token %}
+<table>
+                <tr>
+                    {% for field in form %}
+                        <td><b>{{ field.label_tag }}</b></td>
+                    <td>{{ field }}</td>
+                    <td>{{ field.errors }}</td>
+
+                </tr>
+
+                {% endfor %}
+            </table>
+
+                        <input type="submit" value="ok" class="btn btn-danger">
+
+</form>
+
+    </div>
+</div>
+<div class="card-body">
+    <div class="table-responsive">
+
+<table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+<tr>
+    <th>Batch</th>
+    <th>Action 1</th>
+    <th>Action2</th>
+</tr>
+{% for data in Batch %}
+
+<tr>
+    <td><b>{{ data.Batch }}</b></td>
+<td><a href="{% url 'updatebatch' data.id %}" class="btn btn-primary">Update</a> </td>
+<td><a href="{% url 'deletebatch' data.id %}" class="btn btn-danger">Delete</a> </td>
+{% endfor %}
+
+</tr>
+</table>
+    </div>
+</div>
+{% endblock %}

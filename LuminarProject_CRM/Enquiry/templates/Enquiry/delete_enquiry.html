@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+{% extends 'index/navbar.html' %}
+{% block content %}
+<div class="row" style="padding-left: 50px;margin-top: 50px">
+<form method="post">
+    {% csrf_token %}
+    {{ object.Student_name }}
+    <input type="submit" value="Delete" class="btn btn-danger">
+    <a href="{% url 'listenquiry' %}"class="btn btn-primary">Back</a>
+</form>
+</div>
+{% endblock %}

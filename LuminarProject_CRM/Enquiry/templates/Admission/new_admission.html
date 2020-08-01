@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+{% extends 'index/index1.html' %}
+{% block content %}
+{#<h1 style="color: red;margin-left: 480px;">Take Your Admission Here</h1><br>#}
+    <br>
+<div class="container">
+    <div class="row" style="margin-left: 450px">
+<form method="post">
+    {% csrf_token %}
+{#    {{ form.as_p }}#}
+    <table>
+        <tr>
+            {% for field in form %}
+            <td>{{ field.label_tag }}</td>
+            <td>{{ field }}</td>
+            <td>{{ field.errors }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    <input type="submit" value="ok" class="btn btn-danger">
+</form>
+    </div>
+</div>
+{% endblock %}

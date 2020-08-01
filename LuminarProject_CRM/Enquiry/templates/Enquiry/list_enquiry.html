@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+{% extends 'index/index1.html' %}
+{% block content %}
+<div class="card-body">
+<div class="table-responsive">
+<table class="table table-bordered" id="dataTable" width="100%" cellspacing="0" >
+<thead>
+<tr>
+{#    <th>Enquiry ID</th>#}
+    <th>Student Name</th>
+    <th>Course</th>
+    <th>Qualification</th>
+    <th>Action 1</th>
+    <th>Action 2</th>
+    <th>Action 3</th>
+</tr>
+</thead>
+{#{%  for data in object_list %}#}
+<tfoot>
+    {% for data in qs %}
+    <tr>
+{#        <td>{{ data.Enquiry_id }}</td>#}
+    <td>{{ data.Student_name }}</td>
+    <td>{{ data.Course }}</td>
+    <td>{{ data.Qualification }}</td>
+    <td><a href="{% url 'viewenquiry' data.Enquiry_id %}" class="btn btn-secondary">View</a> </td>
+        <td><a href="{% url 'updateenquiry' data.Enquiry_id %}" class="btn btn-primary" >Update</td>
+        <td><a href="{% url 'deleteenquiry' data.Enquiry_id %}" class="btn btn-danger">Delete</a> </td>
+        {% endfor %}
+    </tr>
+</tfoot>
+</table>
+</div>
+</div>
+{% endblock %}

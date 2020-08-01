@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+{% extends 'index/navbar.html' %}
+{% block content %}
+
+<table class="table dark">
+<tr>
+{% for data in item %}
+    <td>
+        {{ data.Student_name }}</td>
+    <td>
+    {{ data.Contact }}
+    </td>
+    <td>
+    {{ data.Course }}
+    </td>
+
+    </tr>
+    {% endfor %}
+    </table>
+<a href="{% url 'search' %}" class="btn btn-primary" style="margin-left: 1200px">Back</a>
+{% endblock %}

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+{% extends 'index/index1.html' %}
+{% block content %}
+{#<h1 style="color:red;">Today's Followup's</h1><br>#}
+<table class="table dark" >
+<tr>
+{% for data in followup %}
+    <td>
+        {{ data.Student_name }}</td>
+    <td>
+    {{ data.Contact }}
+    </td>
+    <td>
+    {{ data.Course }}
+    </td>
+    <td>
+      <a href="{% url 'followupdetails' data.Enquiry_id %}">Followup</a>
+    </td>
+    </tr>
+    {% endfor %}
+    </table>
+<a href="{% url 'home' %}" class="btn btn-primary" style="margin-left: 1200px">Home</a>
+{% endblock %}

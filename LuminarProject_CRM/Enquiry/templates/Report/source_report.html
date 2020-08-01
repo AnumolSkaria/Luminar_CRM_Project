@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+{% extends 'index/index1.html' %}
+{% block content %}
+<div class="card-body" style="margin-top: 50px">
+    <div class="table-responsive">
+        <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+        <tr>
+            <th>Source</th>
+            <th>Batch</th>
+            <th>Course</th>
+            <th>No:of Enquiries</th>
+        </tr>
+            {% for data in form %}
+            <tr>
+            <td>{{ data.Source__Source }}</td>
+            <td>{{ data.Batch__Batch}}</td>
+            <td>{{ data.Batch__Course__Course }}</td>
+            <td>{{ data.studentno }}</td>
+
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+</div>
+
+{% endblock %}

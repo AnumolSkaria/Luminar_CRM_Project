@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+{% extends 'index/navbar.html' %}
+{% block content %}
+<h1 style="color:red;padding-left: 550px;">Update Enquiry</h1><br>
+<div class="container">
+    <div class="row" style="padding-left: 400px">
+
+<form method="post">
+    {% csrf_token %}
+{#    {{ form.as_p }}#}
+    <table class="table dark">
+        <tr>
+            {% for field in form %}
+            <td>
+                {{ field.label_tag }}
+            </td>
+            <td>
+                {{ field }}
+            </td>
+            <td>
+                {{ field.errors }}
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+    <input type="submit" value="ok" class="btn btn-primary">
+</form>
+
+    </div>
+</div>
+{% endblock %}

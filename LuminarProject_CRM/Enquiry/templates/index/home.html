@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+{% extends 'index/index1.html' %}
+{% block content %}
+
+<div class="container">
+<div class="row">
+    {% for data in qs %}
+    <div class="card-body">
+    <h5 style="color: red;margin-top: 0px">Course yet to begin</h5>
+        <table>
+            <tr>
+                <td><b>Course:</b>{{ data.Batch__Course__Course }}</td>
+            </tr>
+            <tr>
+                <td><b>Starts on:</b>{{ data.Batch__Date }}</td>
+            </tr>
+            <tr>
+                <td><b>Enquiries:</b>{{ data.enqcount }}</td>
+            </tr>
+{#            <tr>#}
+{#                <td>Admission:{% for d in qs1 %}{{ d.enq }}{% endfor %}</td>#}
+{#            </tr>#}
+        </table>
+    </div>
+    {% endfor %}
+</div>
+</div>
+
+{% endblock %}

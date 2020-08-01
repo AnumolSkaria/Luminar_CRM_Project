@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+{% extends 'index/index1.html' %}
+{% block content %}
+{#<h1 style="padding-left: 510px;color: red">Pay Fees Here</h1>#}
+<div class="container" style="padding-left: 400px;margin-top: 20px">
+    <div class="row">
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="ok" class="btn btn-danger">
+</form>
+    </div>
+</div>
+{% endblock %}

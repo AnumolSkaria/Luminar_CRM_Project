@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+{% extends 'index/navbar.html' %}
+{% block content %}
+<body>
+<h1 style="color: red;padding-left: 490px">Enquiry Details</h1>
+<a href="{% url 'listenquiry' %}" class="btn btn-primary" style="margin-left:1200px">Back</a>
+<br>
+<div class="container">
+    <div class="row" style="padding-left:350px">
+
+<form>
+    <table class="table dark">
+        <tr>
+            <th>Enquiry ID</th>
+            <td>{{ details.Enquiry_id }}</td>
+        </tr>
+        <tr>
+            <th>Student Name</th>
+            <td>{{ details.Student_name }}</td>
+        </tr>
+        <tr>
+            <th>Qualification</th>
+            <td>{{ details.Qualification }}</td>
+        </tr>
+        <tr>
+            <th>Address</th>
+             <td>{{ details.Address }}</td>
+        </tr>
+        <tr>
+            <th>College</th>
+            <td>{{ details.College }}</td>
+        </tr>
+        <tr>
+            <th>Course</th>
+            <td>{{ details.Course }}</td>
+        </tr>
+        <tr>
+            <th>Email</th>
+            <td>{{ details.Email }}</td>
+        </tr>
+        <tr>
+            <th>Contact</th>
+            <td>{{ details.Contact }}</td>
+        </tr>
+        <tr>
+            <th>Enquiry Date</th>
+            <td>{{ details.Enquiry_date }}</td>
+        </tr>
+        <tr>
+            <th>Followup Date</th>
+            <td>{{ details.Followup_date }}</td>
+        </tr>
+        <tr>
+            <th>Counceller</th>
+            <td>{{ details.Counceller }}</td>
+        </tr>
+        <tr>
+            <th>Source</th>
+            <td>{{ details.Source }}</td>
+        </tr>
+        <tr>
+            <th>Status</th>
+            <td>{{ details.get_Status_display}}</td>
+        </tr>
+    </table>
+</form>
+
+    </div>
+</div>
+{% endblock %}

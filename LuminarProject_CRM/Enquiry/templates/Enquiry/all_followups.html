@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+{% extends 'index/index1.html' %}
+{% block content %}
+{% for data in followup %}
+{{ data.Student_name }}
+    {{ data.Contact }}
+    {{ data.Course }}
+<a href="{% url 'followupdetails' data.Enquiry_id %}">Followup</a>
+
+{% endfor %}
+{% endblock %}

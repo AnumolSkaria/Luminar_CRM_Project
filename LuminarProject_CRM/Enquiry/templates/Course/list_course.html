@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <title>Title</title>
+</head>
+<body>
+<h1 style="color: red;padding-left: 540px">Course List</h1>
+<a href="{% url 'home' %}" class="btn btn-success" style="margin-left: 1200px">Home</a><br><br>
+<div class="container">
+<div class="row">
+
+
+<table class="table dark">
+<tr>
+{#    <th>Enquiry ID</th>#}
+
+    <th>Course</th>
+    <th>Action 1</th>
+    <th>Action 2</th>
+
+</tr>
+{#{%  for data in object_list %}#}
+    {% for data in qs %}
+    <tr>
+{#        <td>{{ data.Enquiry_id }}</td>#}
+
+    <td>{{ data.Course }}</td>
+        <td><a href="{% url 'updatecourse' data.id %}" class="btn btn-primary" >Update</td>
+        <td><a href="{% url 'deletecourse' data.id %}" class="btn btn-danger">Delete</a> </td>
+        {% endfor %}
+    </tr>
+
+</table>
+</div>
+</div>
+</body>
+</html>

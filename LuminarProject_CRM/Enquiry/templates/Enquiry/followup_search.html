@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+{% extends 'index/index1.html' %}
+{% block content %}
+{#<h1 style="color: red;">Search Followup's Here</h1>#}
+<br>
+<form method="post" style="margin-left: 500px">
+{% csrf_token %}
+<table >
+    <tr>
+        {% for field in form %}
+            <td><b>{{ field.label_tag }}</b></td>
+            <td>{{ field }}</td>
+            <td>{{ field.errors }}</td>
+    </tr>
+{#            <tr>#}
+{#            <td>#}
+{#                <label>To</label>#}
+{#                <input type="date" name="to"></td>#}
+{#            </tr>#}
+    {% endfor %}
+</table><br>
+<input type="submit" value="Go" class="btn btn-primary">
+</form>
+{% endblock %}
